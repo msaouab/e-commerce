@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker&display=swap');
+
 :root {
 	--backColor: white;
 }
@@ -6,10 +8,13 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
-body, html {
+body,
+html {
 	background-color: var(--backColor);
+	font-family: 'Blinker', sans-serif;
 }
 
 .debug {

@@ -34,11 +34,11 @@ const ContactStyle = styled.div`
 
 const Contact = () => {
 	return (
-		<ContactStyle className="debug">
+		<ContactStyle className="">
 			<div className="container">
 				<h2>Newsletter</h2>
 				<form>
-					<input type="text" placeholder="john@doe.com" />
+					<input type="text" placeholder="your@email.com" />
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>

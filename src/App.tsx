@@ -10,12 +10,11 @@ const AppStyle = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	& > header {
-		z-index: 10;
 	}
 	& > main {
 		max-width: 1200px;
 		margin: 0 auto;
-		z-index: 0;
+		padding-bottom: 10rem;
 	}
 `;
 

@@ -47,7 +47,9 @@ const Footer = () => {
 				<div>
 					<p>
 						Build by
-						<a href="">{" <msaouab />"}</a>
+						<a href="https://github.com/msaouab/e-commerce" target="_black">
+							{" <msaouab />"}
+						</a>
 					</p>
 				</div>
 			</div>
