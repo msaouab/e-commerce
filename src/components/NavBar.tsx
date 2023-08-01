@@ -51,47 +51,54 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 					& > a {
 						text-decoration: none;
 						color: #000;
+						font-size: 1.125rem;
 					}
 				}
 				& > li:hover {
 					border-bottom: 2px solid #000;
 				}
-				& > li:last-child:hover {
-					border-bottom: 2px solid transparent;
-				}
 			}
 			& > .shopIcon {
+				margin-right: 1rem;
 				list-style: none;
+				& > svg {
+					font-size: 1.5rem;
+				}
 			}
 		}
 	}
+	@media (max-width: 1200px) {
+		padding: 0 1rem;
+	}
 	@media (max-width: 768px) {
-		/* display: flex; */
 		flex-direction: row-reverse;
+		position: relative;
 		& > .hamburger {
 			display: block;
 		}
-		position: relative;
 		& > .navContainer {
-			border: 1px solid blue;
 			& > nav {
-				border: 1px solid red;
 				& > ul {
-					border: 1px solid green;
 					display: none;
 				}
 			}
 			& > .open {
 				& > ul {
+					background-color: #fff;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
 					position: absolute;
 					top: 80px;
 					right: 0px;
+					width: 100%;
+					box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 0.15);
 				}
 			}
 		}
+	}
+	@media (max-width: 576px) {
+		padding: 0 0 0 .5rem;
 	}
 `;
 
