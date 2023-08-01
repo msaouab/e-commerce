@@ -29,7 +29,7 @@ const ContactStyle = styled.div`
 			}
 		}
 	}
-	@media (max-width: 317px) {
+	@media (max-width: 360px) {
 		& > .container {
 			& > form {
 				& > input, & > button {
