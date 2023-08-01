@@ -7,10 +7,10 @@ import Contact from "./pages/Contact";
 
 const AppStyle = styled.div`
 	display: flex;
-	/* flex-direction: column; */
-	/* justify-content: space-between; */
+	flex-direction: column;
+	justify-content: space-between;
 	& > header {
-		/* background-color: #fff; */
+		background-color: #fff;
 	}
 	& > main {
 		max-width: 1200px;
@@ -26,11 +26,11 @@ function App() {
 				<NavBar />
 				<main>
 					<Routes>
-						{/* <Route path={"/"} element={<Home />} /> */}
+						<Route path={"/"} element={<Home />} />
 					</Routes>
 				</main>
-				{/* <Contact /> */}
-				{/* <Footer /> */}
+				<Contact />
+				<Footer />
 			</BrowserRouter>
 		</AppStyle>
 	);
