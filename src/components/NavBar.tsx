@@ -3,6 +3,7 @@ import Logo from "/src/assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { useEffect, useState } from "react";
+import Hamburger from "hamburger-react";
 
 interface NavBarStyleProps {
 	height: string;
@@ -18,7 +19,10 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	& > .navBar {
+	& > .hamburger {
+		display: none;
+	}
+	& > .navContainer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -33,6 +37,8 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 			cursor: pointer;
 		}
 		& > nav {
+			display: flex;
+			gap: 2rem;
 			& > ul {
 				display: flex;
 				justify-content: space-evenly;
@@ -54,19 +60,51 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 					border-bottom: 2px solid transparent;
 				}
 			}
+			& > .shopIcon {
+				list-style: none;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		/* display: flex; */
+		flex-direction: row-reverse;
+		& > .hamburger {
+			display: block;
+		}
+		position: relative;
+		& > .navContainer {
+			border: 1px solid blue;
+			& > nav {
+				border: 1px solid red;
+				& > ul {
+					border: 1px solid green;
+					display: none;
+				}
+			}
+			& > .open {
+				& > ul {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					position: absolute;
+					top: 80px;
+					right: 0px;
+				}
+			}
 		}
 	}
 `;
 
 const NavBar = () => {
-	const [scrollY, setScrollY] = useState(0);
+	const [isOpen, setOpen] = useState(false);
+	const [scrollY, setScrollY] = useState(120);
 
 	const handleScroll = () => {
-		if (!scrollY) {
-		console.log(scrollY);
-			setScrollY(120)
-		}
 		setScrollY(window.scrollY === 0 ? 120 : 70);
+	};
+
+	const handleTogle = () => {
+		setOpen(!isOpen);
 	};
 
 	useEffect(() => {
@@ -76,11 +114,14 @@ const NavBar = () => {
 
 	return (
 		<NavBarStyle height={scrollY.toString()}>
-			<div className="navBar">
+			<div className="hamburger" onClick={handleTogle}>
+				<Hamburger toggled={isOpen} toggle={handleTogle} rounded />
+			</div>
+			<div className="navContainer">
 				<NavLink to={"/"}>
 					<img src={Logo} alt="minimalist Ecommerce" />
 				</NavLink>
-				<nav>
+				<nav className={isOpen ? "open " : ""}>
 					<ul>
 						<li>
 							<NavLink to={"/"}>CATEGORIES</NavLink>
@@ -91,8 +132,8 @@ const NavBar = () => {
 						<li>
 							<NavLink to={"/"}>FURNITURE</NavLink>
 						</li>
-						<li>{<MdOutlineLocalGroceryStore />}</li>
 					</ul>
+					<li className="shopIcon">{<MdOutlineLocalGroceryStore />}</li>
 				</nav>
 			</div>
 		</NavBarStyle>

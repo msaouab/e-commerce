@@ -4,8 +4,8 @@ import styled from "styled-components";
 const BtnStyle = styled.div`
 	.actionBtn {
 		padding: 10px 13px;
-		border: 3px solid var(--action-btn-color);
-		font-weight: 500;
+		border: 2px solid var(--action-btn-color);
+		font-weight: 700;
 		transition: 0.1s ease-in-out;
 		box-sizing: border-box !important;
 		width: fit-content;

@@ -3,13 +3,15 @@ import styled from "styled-components";
 const FooterStyle = styled.footer`
 	background-color: #000;
 	color: #fff;
+	height: 10.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
 	& > .container {
-		height: 130px;
+		height: 100%;
 		max-width: 1200px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 		gap: 2rem;
 		margin: auto;
 		padding: 0 19px;
@@ -34,7 +36,7 @@ const FooterStyle = styled.footer`
 
 const Footer = () => {
 	return (
-		<FooterStyle>
+		<FooterStyle className="debug">
 			<div className="container">
 				<ul>
 					<li>About</li>

@@ -16,7 +16,7 @@ const HomeStyle = styled.div`
 
 const Home = () => {
 	return (
-		<HomeStyle className="container debug">
+		<HomeStyle className="container">
 			<h1>Home</h1>
 			<h1>Home</h1>
 			<h1>Home</h1>

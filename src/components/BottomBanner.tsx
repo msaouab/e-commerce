@@ -20,17 +20,25 @@ const BannerStyle = styled.div`
 	& > .leftSide {
 		width: 50%;
 		height: 100%;
+		padding: 0 7rem;
+		background-color: #e9e9e9;
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
-		align-items: flex-start;
-		gap: 1rem;
-		padding: 0 8rem;
-		& > h2 {
-			font-size: 3.2rem;
-			font-weight: 600;
-		}
-		& > p {
+		align-items: center;
+		& > .text {
+			height: 50%;
+			width: 90%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 1rem;
+			& > h2 {
+				font-size: 2rem;
+				font-weight: 600;
+			}
+			& > p {
+			}
 		}
 	}
 `;
@@ -42,12 +50,14 @@ const BottomBanner = () => {
 				<img src={BtmBanner} alt="Bottom Banner" />
 			</div>
 			<div className="leftSide">
-				<h2>Comfortable & Elegante Living</h2>
-				<p>
-					RAOUF Products are all made to standard sizes so that you can mix and
-					match them freely.
-				</p>
+				<div className="text">
+					<h2>Comfortable & Elegante Living</h2>
+					<p>
+						RAOUF Products are all made to standard sizes so that you can mix
+						and match them freely.
+					</p>
 				<Button text="SHOP NOW" />
+				</div>
 			</div>
 		</BannerStyle>
 	);
