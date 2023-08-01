@@ -5,19 +5,19 @@ const FooterStyle = styled.footer`
 	color: #fff;
 	height: 10.5rem;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	text-align: center;
-	align-items: center;
 	& > .container {
-		height: 100%;
-		max-width: 1200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		gap: 2rem;
-		margin: auto;
-		padding: 0 19px;
 		& > ul {
 			display: flex;
-			gap: 1rem;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: .5rem;
 			& > li {
 				cursor: pointer;
 				list-style: none;
@@ -36,7 +36,7 @@ const FooterStyle = styled.footer`
 
 const Footer = () => {
 	return (
-		<FooterStyle className="debug">
+		<FooterStyle className="≈">
 			<div className="container">
 				<ul>
 					<li>About</li>
@@ -50,7 +50,7 @@ const Footer = () => {
 					<p>
 						Build by
 						<a href="https://github.com/msaouab/e-commerce" target="_black">
-							{" <msaouab />"}
+							{" < msaouab />"}
 						</a>
 					</p>
 				</div>

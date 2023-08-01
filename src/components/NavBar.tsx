@@ -61,6 +61,7 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 			& > .shopIcon {
 				margin-right: 1rem;
 				list-style: none;
+				cursor: pointer;
 				& > svg {
 					font-size: 1.5rem;
 				}

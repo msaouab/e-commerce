@@ -8,14 +8,10 @@ import Contact from "./pages/Contact";
 const AppStyle = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	& > header {
 		background-color: #fff;
 	}
 	& > main {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding-bottom: 10rem;
 	}
 `;
 

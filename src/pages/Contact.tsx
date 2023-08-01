@@ -5,20 +5,19 @@ const ContactStyle = styled.div`
 	color: #fff;
 	& > .container {
 		height: 300px;
-		max-width: 1200px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 2rem;
-		margin: auto;
-		padding: 0 19px;
 		& > h2 {
 			font-size: 2.25rem;
 		}
 		& > form {
 			display: flex;
-			column-gap: .5rem;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: .5rem;
 			& > input, & > button {
 				padding: .5rem;
 				font-size: 1rem;
@@ -27,6 +26,15 @@ const ContactStyle = styled.div`
 			}
 			& > button {
 				cursor: pointer;
+			}
+		}
+	}
+	@media (max-width: 317px) {
+		& > .container {
+			& > form {
+				& > input, & > button {
+					width: 100%;
+				}
 			}
 		}
 	}
