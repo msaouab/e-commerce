@@ -3,9 +3,9 @@ import Button from "./Button";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const BannerStyle = styled.section<{ isFirst?: boolean }>`
+const BannerStyle = styled.section<{ $isFirst?: boolean }>`
 	display: flex;
-	flex-direction: ${({ isFirst }) => (isFirst ? "row" : "row-reverse")};
+	flex-direction: ${({ $isFirst }) => ($isFirst ? "row" : "row-reverse")};
 	justify-content: center;
 	align-items: center;
 	height: 25rem;
@@ -59,10 +59,6 @@ const BannerStyle = styled.section<{ isFirst?: boolean }>`
 	}
 `;
 
-interface BannerProps {
-	isFirst?: boolean;
-}
-
 interface BannerData {
 	image: string;
 	alt: string;
@@ -78,23 +74,26 @@ interface Data {
 	};
 }
 
-const Banner: React.FC<BannerProps> = ({ isFirst }) => {
+const Banner = (Props: { $isFirst: boolean; }) => {
+
+	const { $isFirst } = Props;
+
 	const [banner, setBanner] = useState<BannerData | null>(null);
 	useEffect(() => {
 		axios.get<Data>("/src/data/dbStore.json").then((res) => {
-			if (isFirst === true) {
+			if ($isFirst === true) {
 				setBanner(res.data.Banner.topBanner);
 			}
-			if (isFirst === false) {
+			if ($isFirst === false) {
 				setBanner(res.data.Banner.bottomBanner);
 			}
 		});
-	}, [isFirst]);
+	}, [$isFirst]);
 
 	if (!banner) return null;
 
 	return (
-		<BannerStyle isFirst={isFirst} className="container">
+		<BannerStyle $isFirst={$isFirst} className="container">
 			<div className="rightSide">
 				<img src={banner?.image} alt={banner.alt} />
 			</div>

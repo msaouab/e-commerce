@@ -17,8 +17,8 @@ const Home = () => {
 	return (
 		<HomeStyle className="container">
 			<h1>Home</h1>
-			<Banner isFirst={TopBanner} />
-			<Banner isFirst={BottomBanner} />
+			<Banner $isFirst={TopBanner} />
+			<Banner $isFirst={BottomBanner} />
 		</HomeStyle>
 	);
 };
