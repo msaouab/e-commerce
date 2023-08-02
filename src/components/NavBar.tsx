@@ -132,7 +132,7 @@ const NavBar = () => {
 				<nav className={isOpen ? "open " : ""}>
 					<ul>
 						<li>
-							<NavLink to={"/"}>CATEGORIES</NavLink>
+							<NavLink to={"/categories"}>CATEGORIES</NavLink>
 						</li>
 						<li>
 							<NavLink to={"/Product"}>PRODUCT PAGE</NavLink>

@@ -5,7 +5,7 @@ import data from "../data/dbStore.json";
 
 const BannerStyle = styled.section<{ $isFirst?: boolean }>`
 	display: flex;
-	flex-direction: ${({ $isFirst }) => ($isFirst ? "row" : "row-reverse")};
+	flex-direction: ${({ $isFirst }) => ($isFirst ? "row-reverse" : "row")};
 	justify-content: center;
 	align-items: center;
 	height: 25rem;
@@ -69,15 +69,11 @@ interface BannerData {
 
 const Banner = (Props: { $isFirst: boolean }) => {
 	const { $isFirst } = Props;
-
 	const [banner, setBanner] = useState<BannerData | null>(null);
+
 	useEffect(() => {
-		if ($isFirst === true) {
-			setBanner(data.Banner.topBanner);
-		}
-		if ($isFirst === false) {
-			setBanner(data.Banner.bottomBanner);
-		}
+		if ($isFirst === true) setBanner(data.Banner.topBanner);
+		if ($isFirst === false) setBanner(data.Banner.bottomBanner);
 	}, [$isFirst]);
 
 	if (!banner) return null;
