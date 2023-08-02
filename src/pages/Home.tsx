@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Banner from "../components/Banner";
-// import TopBanner from "../components/TopBanner";
 
 const HomeStyle = styled.div`
 	margin-top: 130px;

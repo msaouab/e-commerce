@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "./Button";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import data from "../data/dbStore.json";
 
 const BannerStyle = styled.section<{ $isFirst?: boolean }>`
 	display: flex;
@@ -67,27 +67,17 @@ interface BannerData {
 	link: string;
 }
 
-interface Data {
-	Banner: {
-		topBanner: BannerData;
-		bottomBanner: BannerData;
-	};
-}
-
-const Banner = (Props: { $isFirst: boolean; }) => {
-
+const Banner = (Props: { $isFirst: boolean }) => {
 	const { $isFirst } = Props;
 
 	const [banner, setBanner] = useState<BannerData | null>(null);
 	useEffect(() => {
-		axios.get<Data>("/src/data/dbStore.json").then((res) => {
-			if ($isFirst === true) {
-				setBanner(res.data.Banner.topBanner);
-			}
-			if ($isFirst === false) {
-				setBanner(res.data.Banner.bottomBanner);
-			}
-		});
+		if ($isFirst === true) {
+			setBanner(data.Banner.topBanner);
+		}
+		if ($isFirst === false) {
+			setBanner(data.Banner.bottomBanner);
+		}
 	}, [$isFirst]);
 
 	if (!banner) return null;
