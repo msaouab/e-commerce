@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Button from "./Button";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const BannerStyle = styled.section<{ $isFirst?: boolean }>`
