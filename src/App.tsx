@@ -12,6 +12,7 @@ const AppStyle = styled.div`
 		background-color: #fff;
 	}
 	& > main {
+		margin-bottom: 6rem;
 	}
 `;
 

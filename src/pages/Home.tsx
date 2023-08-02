@@ -1,20 +1,21 @@
 import styled from "styled-components";
 import BottomBanner from "../components/BottomBanner";
-import CenterBanner from "../components/CenterBanner";
+import TopBanner from "../components/TopBanner";
 
 const HomeStyle = styled.div`
 	margin-top: 130px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
+	gap: 5rem;
 `;
 
 const Home = () => {
 	return (
 		<HomeStyle className="container">
 			<h1>Home</h1>
-			<CenterBanner />
+			<TopBanner />
 			<BottomBanner />
 		</HomeStyle>
 	);

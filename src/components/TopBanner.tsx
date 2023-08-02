@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BtmBanner from '../assets/imgs/hero grid/bottom banner.jpg'
 import Button from "./Button";
+import TBanner from '../assets/imgs/hero grid/top banner.jpg'
 
 const BannerStyle = styled.div`
 	display: flex;
@@ -57,12 +57,9 @@ const BannerStyle = styled.div`
 	}
 `;
 
-const BottomBanner = () => {
+const TopBanner = () => {
 	return (
 		<BannerStyle className="container">
-			<div className="rightSide">
-				<img src={BtmBanner} alt="Bottom Banner" />
-			</div>
 			<div className="leftSide ">
 				<div className="text">
 					<h2>Comfortable & Elegante Living</h2>
@@ -73,8 +70,11 @@ const BottomBanner = () => {
 					<Button text="SHOP NOW" />
 				</div>
 			</div>
+			<div className="rightSide">
+				<img src={TBanner} alt="Bottom Banner" />
+			</div>
 		</BannerStyle>
 	);
 };
 
-export default BottomBanner;
+export default TopBanner;
