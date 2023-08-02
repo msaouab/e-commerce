@@ -1,14 +1,14 @@
 {
 	"Banner": {
 		"topBanner": {
-			"image": "src/assets/imgs/hero grid/top banner.jpg",
+			"image": "/imgs/hero grid/top banner.jpg",
 			"alt": "top banner",
 			"header": "Creative harmonious living",
 			"content": "RAOUF Products are all made to standard sizes so that you can mix and match them freely.",
 			"link": ""
 		},
 		"bottomBanner": {
-			"image": "/src/assets/imgs/hero grid/bottom banner.jpg",
+			"image": "/imgs/hero grid/bottom banner.jpg",
 			"alt": "bottom banner",
 			"header": "Comfortable & Elegante Living",
 			"content": "RAOUF Products are all made to standard sizes so that you can mix and match them freely.",

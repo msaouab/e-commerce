@@ -85,7 +85,7 @@ const Banner = (Props: { $isFirst: boolean }) => {
 	return (
 		<BannerStyle $isFirst={$isFirst} className="container">
 			<div className="rightSide">
-				<img src={process.env.PUBLIC_URL + banner?.image} alt={banner.alt} />
+				<img src={banner?.image} alt={banner.alt} />
 			</div>
 			<div className="leftSide ">
 				<div className="text">

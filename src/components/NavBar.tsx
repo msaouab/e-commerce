@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "/src/assets/logo.png";
+import Logo from "/logo.png"
 import { NavLink } from "react-router-dom";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { useEffect, useState } from "react";
