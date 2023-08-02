@@ -1,9 +1,15 @@
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import NavCategory from "../components/NavCategory";
+import ProductCards from "../components/ProdectCards";
 
 const CategoryStyle = styled.section`
 	& > header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 2rem;
 		& > div {
 			display: flex;
 			justify-content: flex-start;
@@ -43,7 +49,9 @@ const Categories = () => {
 					</div>
 					<h1>{"ALL"}</h1>
 				</div>
+				<NavCategory />
 			</header>
+			<ProductCards />
 		</CategoryStyle>
 	);
 };

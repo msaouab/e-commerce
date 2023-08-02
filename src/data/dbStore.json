@@ -42,5 +42,56 @@
 		}
 	},
 	"Trending": {},
-	"Proud": {}
+	"Proud": {},
+	"Category": {
+		"0": {
+			"image": "/imgs/products/Chairs/Chair-sofa/chair sheep.png",
+			"alt": "Chair-sofa",
+			"header": "Chair-sofa",
+			"price": "986$",
+			"link": "products/1"
+		},
+		"1": {
+			"image": "/imgs/Pop Up Toaster/2.jpg",
+			"alt": "Pop Up Toaster",
+			"header": "Living Room",
+			"price": "986$",
+			"link": "products/2"
+		},
+		"2": {
+			"image": "/imgs/products/flower keeper/22001_pack_2-p.png",
+			"alt": "flower keeper",
+			"header": "flower keeper",
+			"price": "986$",
+			"link": "products/3"
+		},
+		"3": {
+			"image": "/imgs/products/Lamps/black lamp/lamp-black.png",
+			"alt": "black lamp",
+			"header": "black lamp",
+			"price": "986$",
+			"link": "products/4"
+		},
+		"4": {
+			"image": "/imgs/products/Lamps/lamp ceiling/133012-dot-pendant-1-exposed-p.png",
+			"alt": "lamp ceiling",
+			"header": "lamp ceiling",
+			"price": "986$",
+			"link": "products/5"
+		},
+		"5": {
+			"image": "/imgs/products/Shelfs/simple black/5712731201001-4-pjpg.webp",
+			"alt": "simple black",
+			"header": "simple black",
+			"price": "986$",
+			"link": "products/6"
+		},
+		"6": {
+			"image": "/imgs/products/Chairs/black simple/603494_Normann_Copenhagen_Sum_Armchair_Alu_Camira_Synergy_Couple_LDS_41_01.png",
+			"alt": "black simple",
+			"header": "black simple",
+			"price": "986$",
+			"link": "products/7"
+		}
+	}
 }
