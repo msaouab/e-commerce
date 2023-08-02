@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BottomBanner from "../components/BottomBanner";
-import TopBanner from "../components/TopBanner";
+import Banner from "../components/Banner";
+// import TopBanner from "../components/TopBanner";
 
 const HomeStyle = styled.div`
 	margin-top: 130px;
@@ -12,11 +12,13 @@ const HomeStyle = styled.div`
 `;
 
 const Home = () => {
+	const TopBanner: boolean = false;
+	const BottomBanner: boolean = true;
 	return (
 		<HomeStyle className="container">
 			<h1>Home</h1>
-			<TopBanner />
-			<BottomBanner />
+			<Banner isFirst={TopBanner} />
+			<Banner isFirst={BottomBanner} />
 		</HomeStyle>
 	);
 };

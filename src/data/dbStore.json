@@ -1,0 +1,46 @@
+{
+	"Banner": {
+		"topBanner": {
+			"image": "src/assets/imgs/hero grid/top banner.jpg",
+			"alt": "top banner",
+			"header": "Creative harmonious living",
+			"content": "RAOUF Products are all made to standard sizes so that you can mix and match them freely.",
+			"link": ""
+		},
+		"bottomBanner": {
+			"image": "/src/assets/imgs/hero grid/bottom banner.jpg",
+			"alt": "bottom banner",
+			"header": "Comfortable & Elegante Living",
+			"content": "RAOUF Products are all made to standard sizes so that you can mix and match them freely.",
+			"link": ""
+		}
+	},
+	"Home": {
+		"0": {
+			"image": "../assets/imags/hero grid/big sqr.jpg",
+			"alt": "big square",
+			"header": "Live Comfortably",
+			"link": ""
+		},
+		"1": {
+			"image": "../assets/imags/hero grid/mid tall rect.jpg",
+			"alt": "mid tall rect",
+			"header": "Skincare",
+			"link": ""
+		},
+		"2": {
+			"image": "../assets/imags/hero grid/kitchen.jpg",
+			"alt": "kitchen",
+			"header": "Kitchen",
+			"link": ""
+		},
+		"3": {
+			"image": "../assets/imags/hero grid/electronics.jpg",
+			"alt": "electronics",
+			"header": "Electronics",
+			"link": ""
+		}
+	},
+	"Trending": {},
+	"Proud": {}
+}

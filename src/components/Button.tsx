@@ -23,14 +23,14 @@ const BtnStyle = styled.div`
 `;
 
 interface ButtonProps {
-	text: string;
+	link: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
+const Button: React.FC<ButtonProps> = ({ link }) => {
 	return (
 		<BtnStyle>
-			<Link to={""} className="actionBtn">
-				{text}
+			<Link to={link} className="actionBtn">
+				SHOP NOW
 			</Link>
 		</BtnStyle>
 	);

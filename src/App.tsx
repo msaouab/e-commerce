@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import ProductPage from "./pages/ProductPage";
+import Categories from "./pages/Categories";
 
 const AppStyle = styled.div`
 	display: flex;
@@ -24,6 +26,8 @@ function App() {
 				<main>
 					<Routes>
 						<Route path={"/"} element={<Home />} />
+						<Route path={"/Product"} element={<ProductPage />} />
+						<Route path={"/categories"} element={<Categories />} />
 					</Routes>
 				</main>
 				<Contact />
