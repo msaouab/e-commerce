@@ -29,7 +29,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ link }) => {
 	return (
 		<BtnStyle>
-			<Link to={link} className="actionBtn">
+			<Link onClick={() => window.scrollTo(0, 0)} to={link} className="actionBtn">
 				SHOP NOW
 			</Link>
 		</BtnStyle>

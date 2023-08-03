@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NavCategory from "../components/NavCategory";
 import ProductCards from "../components/ProdectCards";
+import { useSelector } from "react-redux";
+import { RootState } from "../../reducers/store";
 
 const CategoryStyle = styled.section`
 	& > header {
@@ -31,12 +33,15 @@ const CategoryStyle = styled.section`
 			& > h1 {
 				flex: 1;
 				font-size: 1.8rem;
+				text-transform: uppercase;
+				font-weight: bolder;
 			}
 		}
 	}
 `;
 
 const Categories = () => {
+	const value = useSelector((state: RootState) => state.category);
 	return (
 		<CategoryStyle className="container">
 			<header className="">
@@ -47,7 +52,7 @@ const Categories = () => {
 							Home
 						</Link>
 					</div>
-					<h1>{"ALL"}</h1>
+					<h1>{value}</h1>
 				</div>
 				<NavCategory />
 			</header>

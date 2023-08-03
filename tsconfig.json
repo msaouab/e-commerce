@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "reducers/store.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -27,7 +27,9 @@ function App() {
 					<Routes>
 						<Route path={"/"} element={<Home />} />
 						<Route path={"/Product"} element={<ProductPage />} />
-						<Route path={"/categories"} element={<Categories />} />
+						<Route path={"/categories"} element={<Categories />}>
+							<Route path={":categories"} element={<Categories />} />
+						</Route>
 					</Routes>
 				</main>
 				<Contact />
