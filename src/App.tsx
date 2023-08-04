@@ -20,7 +20,7 @@ const AppStyle = styled.div`
 
 function App() {
 	return (
-		<AppStyle>
+		<AppStyle className="">
 			<BrowserRouter>
 				<NavBar />
 				<main>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Banner from "../components/Banner";
+import Trending from "../components/Trending";
+import OurProducts from "../components/OurProducts";
 
 const HomeStyle = styled.div`
 	display: flex;
@@ -14,8 +16,9 @@ const Home = () => {
 	const BottomBanner: boolean = false;
 	return (
 		<HomeStyle className="container">
-			<h1>Home</h1>
+			<OurProducts />
 			<Banner $isFirst={TopBanner} />
+			<Trending />
 			<Banner $isFirst={BottomBanner} />
 		</HomeStyle>
 	);

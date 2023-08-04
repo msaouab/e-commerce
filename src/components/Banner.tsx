@@ -9,6 +9,7 @@ const BannerStyle = styled.section<{ $isFirst?: boolean }>`
 	justify-content: center;
 	align-items: center;
 	height: 25rem;
+	width: 100%;
 	& > .rightSide {
 		height: 100%;
 		width: 50%;
@@ -79,7 +80,7 @@ const Banner = (Props: { $isFirst: boolean }) => {
 	if (!banner) return null;
 
 	return (
-		<BannerStyle $isFirst={$isFirst} className="container">
+		<BannerStyle $isFirst={$isFirst} className="">
 			<div className="rightSide">
 				<img src={banner?.image} alt={banner.alt} />
 			</div>

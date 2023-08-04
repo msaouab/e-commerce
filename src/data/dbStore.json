@@ -1,18 +1,44 @@
 {
 	"Banner": {
 		"topBanner": {
-			"image": "/src/img/banner/banner1.jpg",
+			"image": "/img/banner/banner1.jpg",
 			"alt": "top banner",
 			"header": "Creative harmonious living",
 			"content": "RAOUF Products are all made to standard sizes so that you can mix and match them freely.",
 			"link": "/categories"
 		},
 		"bottomBanner": {
-			"image": "/src/img/banner/banner2.jpg",
+			"image": "/img/banner/banner2.jpg",
 			"alt": "bottom banner",
 			"header": "Comfortable & Elegante Living",
 			"content": "RAOUF Products are all made to standard sizes so that you can mix and match them freely.",
 			"link": "/categories"
+		}
+	},
+	"head": {
+		"1": {
+			"image": "/img/header/home-img-1.jpg",
+			"alt": "header image",
+			"title": "Live Comfortably",
+			"link": "/categories/furniture"
+		},
+		"2": {
+			"image": "/img/header/home-img-2.jpg",
+			"alt": "header image",
+			"title": "Skinecare",
+			"link": "/categories/skincare"
+		},
+		"3": {
+			"image": "/img/header/home-img-3.jpg",
+			"alt": "header image",
+			"title": "Kitchen",
+			"link": "/categories/kitchen"
+		},
+		"4": {
+			"image": "/img/header/home-img-4.jpg",
+			"alt": "header image",
+			"title": "Electronics",
+			"link": "/categories/eletronic"
 		}
 	}
 }

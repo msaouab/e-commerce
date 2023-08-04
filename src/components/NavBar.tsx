@@ -121,11 +121,11 @@ const NavBar = () => {
 	}, []);
 
 	return (
-		<NavBarStyle height={scrollY.toString()}>
+		<NavBarStyle height={scrollY.toString()} className="">
 			<div className="hamburger" onClick={handleTogle}>
 				<Hamburger toggled={isOpen} toggle={handleTogle} rounded />
 			</div>
-			<div className="navContainer">
+			<div className="navContainer container">
 				<NavLink to={"/"}>
 					<img src={Logo} alt="minimalist Ecommerce" />
 				</NavLink>
