@@ -44,7 +44,7 @@ const Categories = () => {
 	const value = useSelector((state: RootState) => state.category);
 	return (
 		<CategoryStyle className="container">
-			<header className="">
+			<header className="debug">
 				<div>
 					<div className="left">
 						<Link to={"/"}>

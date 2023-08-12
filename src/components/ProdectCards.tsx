@@ -24,6 +24,8 @@ const CardsStyle = styled.ul`
 const ProductCards = () => {
 	const value = useSelector((state: RootState) => state.category);
 
+	console.log(value);
+
 	let filteredItem = items;
 	if (value !== "all")
 		filteredItem = items.filter((item) => item.category === value);
