@@ -47,6 +47,14 @@ const HeadStyle = styled.section`
 			font-size: 2rem;
 		}
 	}
+	@media (max-width: 750px) {
+		grid-template-areas:
+			"one two"
+			"four four-low";
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		height: 15rem;
+	}
 `;
 
 const item = data.head;
@@ -62,7 +70,7 @@ const HeadHome = () => {
 				onClick={() => dispatch(setCategory(item.Item1.title))}
 			>
 				<img src={item.Item1.image} alt={item.Item1.alt} />
-				<p className="description">{item.Item1.title}</p>
+				<p className="description">{item.Item1.content}</p>
 			</Link>
 			<Link
 				to={item.Item2.link}
@@ -70,7 +78,7 @@ const HeadHome = () => {
 				onClick={() => dispatch(setCategory(item.Item2.title))}
 			>
 				<img src={item.Item2.image} alt={item.Item2.alt} />
-				<p className="description">{item.Item2.title}</p>
+				<p className="description">{item.Item2.content}</p>
 			</Link>
 			<Link
 				to={item.Item3.link}
@@ -78,7 +86,7 @@ const HeadHome = () => {
 				onClick={() => dispatch(setCategory(item.Item3.title))}
 			>
 				<img src={item.Item3.image} alt={item.Item3.alt} />
-				<p className="description">{item.Item3.title}</p>
+				<p className="description">{item.Item3.content}</p>
 			</Link>
 			<Link
 				to={item.Item4.link}
@@ -86,7 +94,7 @@ const HeadHome = () => {
 				onClick={() => dispatch(setCategory(item.Item4.title))}
 			>
 				<img src={item.Item4.image} alt={item.Item4.alt} />
-				<p className="description">{item.Item4.title}</p>
+				<p className="description">{item.Item4.content}</p>
 			</Link>
 		</HeadStyle>
 	);

@@ -35,7 +35,7 @@ const NavCategory = () => {
 						key={index}
 						to={item.path}
 						onClick={() => dispatch(setCategory(item.category))}
-					>
+						>
 						{item.name}
 					</Link>
 				))}

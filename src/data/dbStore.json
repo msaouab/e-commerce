@@ -19,26 +19,30 @@
 		"Item1": {
 			"image": "/img/header/home-img-1.jpg",
 			"alt": "header image",
-			"title": "Live Comfortably",
-			"link": "/categories/furnitures"
+			"content": "Live Comfortably",
+			"link": "/categories/furnitures",
+			"title": "furniture"
 		},
 		"Item2": {
 			"image": "/img/header/home-img-2.jpg",
 			"alt": "header image",
-			"title": "Skinecare",
-			"link": "/categories/skin-care"
+			"content": "Skinecare",
+			"link": "/categories/skin-care",
+			"title": "skin-care"
 		},
 		"Item3": {
 			"image": "/img/header/home-img-3.jpg",
 			"alt": "header image",
-			"title": "Kitchen",
-			"link": "/categories/kitchen"
+			"content": "Kitchen",
+			"link": "/categories/kitchen",
+			"title": "kitchen"
 		},
 		"Item4": {
 			"image": "/img/header/home-img-4.jpg",
 			"alt": "header image",
-			"title": "Electronics",
-			"link": "/categories/electronics"
+			"content": "Electronics",
+			"link": "/categories/electronics",
+			"title": "electronic"
 		}
 	}
 }
