@@ -10,6 +10,10 @@ const HomeStyle = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 	gap: 5rem;
+	margin-top: 8rem;
+	@media (max-width: 768px) {
+		margin-top: .5rem;
+	}
 `;
 
 const Home = () => {

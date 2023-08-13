@@ -5,55 +5,51 @@ import { setCategory } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
 
 const HeadStyle = styled.section`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: .8rem;
 	display: grid;
-	gap: 0.5rem;
-	grid-template-areas:
-		"one two four"
-		"one two four-low";
+	grid-template-areas: 
+		"a b c"
+		"a b d";
 	grid-template-columns: 2fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	height: 31rem;
-	width: 100%;
-	& .item1 {
-		grid-area: one;
-	}
-	& .item2 {
-		grid-area: two;
-	}
-	& .item3 {
-		grid-area: four;
-	}
-	& .item4 {
-		grid-area: four-low;
-	}
-	& > .item {
-		position: relative;
-		& img {
+	& > a {
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		text-decoration: none;
+		color: #000;
+		& > img {
 			width: 100%;
 			height: 100%;
+			max-width: 100%;
 			object-fit: cover;
 			object-position: 50% 50%;
-			filter: brightness(0.7);
-			transition: filter 0.3s ease-in-out;
-		}
-		& > img:hover {
-			filter: brightness(0.6);
-		}
-		& .description {
-			position: absolute;
-			bottom: 1rem;
-			left: 1rem;
-			color: white;
-			font-size: 2rem;
 		}
 	}
-	@media (max-width: 750px) {
+	& > .item1 {
+		grid-area: a;
+	}
+	& > .item2 {
+		grid-area: b;
+	}
+	& > .item3 {
+		grid-area: c;
+	}
+	& > .item4 {
+		grid-area: d;
+	}
+	@media (max-width: 768px) {
 		grid-template-areas:
-			"one two"
-			"four four-low";
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		height: 15rem;
+			"a b"
+			"c d";
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		height: 31rem;
 	}
 `;
 
