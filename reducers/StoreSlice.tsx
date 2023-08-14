@@ -2,10 +2,12 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface StoreState {
 	category: string;
+	id: number;
 }
 
 const initialState: StoreState = {
 	category: "all",
+	id: 1,
 };
 
 const StoreSlice = createSlice({
@@ -15,8 +17,11 @@ const StoreSlice = createSlice({
 		setCategory: (state, action: PayloadAction<string>) => {
 			state.category = action.payload;
 		},
+		setId: (state, action: PayloadAction<number>) => {
+			state.id = action.payload;
+		}
 	},
 });
 
-export const { setCategory } = StoreSlice.actions;
+export const { setCategory, setId } = StoreSlice.actions;
 export default StoreSlice.reducer;

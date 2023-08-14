@@ -34,8 +34,6 @@ interface Props {
 
 const DescriptionCards: React.FC<Props> = ({ texture, weight, size }) => {
 
-	console.log(texture, weight, size);
-
 	return (
 		<CardsStyle>
 			<div>
