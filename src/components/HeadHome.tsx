@@ -8,7 +8,7 @@ const HeadStyle = styled.section`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	gap: .8rem;
 	display: grid;
 	grid-template-areas: 
