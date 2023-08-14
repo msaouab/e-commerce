@@ -73,7 +73,7 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 	}
 	@media (max-width: 768px) {
 		flex-direction: row-reverse;
-		position: relative;
+		/* position: relative; */
 		& > .hamburger {
 			display: block;
 		}
