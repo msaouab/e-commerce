@@ -5,14 +5,20 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../reducers/store";
 import ProductInfo from "./ProductInfo";
 
-const ProductStyle = styled.section``;
+const ProductStyle = styled.section`
+	& > article {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+`;
 
 const Products = () => {
 	const id = useSelector((state: RootState) => state.id);
 	const Item = items.filter((item) => item.id === id);
 
 	return (
-		<ProductStyle>
+		<ProductStyle className="">
 			<article>
 				<ProductInfo item={Item[0]} />
 				<DescriptionCards

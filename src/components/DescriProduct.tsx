@@ -9,7 +9,12 @@ const ProductStyle = styled.div`
 	align-items: center;
 	gap: 2rem;
 	padding: 8rem 5rem 8rem;
-	& > p {}
+	background-color: #e5e5e5;
+	& > p {
+		font-size: 1.2rem;
+		line-height: 30px;
+		font-weight: 400;
+	}
 	& > .qte {
 		width: 100%;
 		display: flex;
@@ -39,10 +44,16 @@ const ProductStyle = styled.div`
 				aspect-ratio: 1;
 				font-size: 1.5rem;
 				border: none;
+				cursor: pointer;
+				background-color: #fff;
+				&:hover {
+					background-color: #e5e5e5;
+				}
 			}
 		}
 	}
 `;
+
 
 interface Props {
 	text: string;
@@ -56,12 +67,9 @@ const DescriProduct: React.FC<Props> = ({ text, price }) => {
 	const increQte = () => {
 		setQte(qte + 1);
 	};
-
 	const decrQre = () => {
 		if (qte > 1) setQte(qte - 1);
 	};
-
-	console.log(qte, totalPrice);
 
 	return (
 		<ProductStyle>

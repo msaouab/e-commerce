@@ -5,10 +5,6 @@ import { setCategory } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
 
 const HeadStyle = styled.section`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	/* flex-wrap: wrap; */
 	gap: .8rem;
 	display: grid;
 	grid-template-areas: 

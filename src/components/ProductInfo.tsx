@@ -15,8 +15,7 @@ const ProductStyle = styled.section`
 		display: flex;
 		gap: 1rem;
 		& > div {
-			flex: 1;
-			width: 100%;
+			width: 50%;
 		}
 	}
 `;
@@ -35,7 +34,7 @@ const ProductInfo: React.FC<Props> = ({ item }) => {
 	const { description, specs, price, img, otherImgs } = item;
 
 	return (
-		<ProductStyle className="debug">
+		<ProductStyle className="">
 			<h2>{description}</h2>
 			<div>
 				<ImgProduct img={img} AllImg={otherImgs} />
