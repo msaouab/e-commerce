@@ -52,6 +52,18 @@ const ProductStyle = styled.div`
 			}
 		}
 	}
+	@media (max-width: 1000px) {
+		padding: 3rem 3rem;
+	}
+	@media (max-width: 850px) {
+		padding: 2rem 1rem;
+	}
+	@media (max-width: 400px) {
+		& > .qte {
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
 `;
 
 

@@ -18,6 +18,14 @@ const ProductStyle = styled.section`
 			width: 50%;
 		}
 	}
+	@media (max-width: 850px) {
+		& > div {
+			flex-direction: column;
+			& > div {
+				width: 100%;
+			}
+		}
+	}
 `;
 
 interface Props {
@@ -34,9 +42,9 @@ const ProductInfo: React.FC<Props> = ({ item }) => {
 	const { description, specs, price, img, otherImgs } = item;
 
 	return (
-		<ProductStyle className="">
+		<ProductStyle>
 			<h2>{description}</h2>
-			<div>
+			<div className="">
 				<ImgProduct img={img} AllImg={otherImgs} />
 				<DescriProduct text={specs} price={price} />
 			</div>
