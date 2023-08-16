@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Logo from "/logo.png";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
@@ -135,15 +135,15 @@ const NavBar = () => {
 				<nav className={isOpen ? "open " : ""}>
 					<ul>
 						<li>
-							<NavLink
+							<Link
 								to={"/categories"}
 								onClick={() => dispatch(setCategory("all"))}
 							>
 								CATEGORIES
-							</NavLink>
+							</Link>
 						</li>
 						<li>
-							<NavLink to={"/product"}>PRODUCT PAGE</NavLink>
+							<Link to={"/product"}>PRODUCT PAGE</Link>
 						</li>
 					</ul>
 					<li className="shopIcon">
