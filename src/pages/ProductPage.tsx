@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Trending from "../components/Trending";
-// import Products from "../components/Products";
+import Products from "../components/Products";
 
 const PageStyle = styled.div`
 	display: flex;
@@ -11,8 +11,8 @@ const PageStyle = styled.div`
 const ProductPage = () => {
 	return (
 		<PageStyle className="container">
-			{/* <Products /> */}
-			<Trending />
+			<Products />
+			{/* <Trending /> */}
 		</PageStyle>
 	)
 };
