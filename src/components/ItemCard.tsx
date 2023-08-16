@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { setCategory, setId } from "../../reducers/StoreSlice";
+import { setId } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
 
 const CardStyle = styled.div`
