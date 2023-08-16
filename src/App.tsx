@@ -3,10 +3,9 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Contact from "./components/Contact";
-import ProductPage from "./pages/ProductPage";
+// import ProductPage from "./pages/ProductPage";
 import Categories from "./pages/Categories";
-import ProductCards from "./components/ProdectCards";
+import Contact from "./components/Contact";
 
 const AppStyle = styled.div`
 	display: flex;
@@ -23,22 +22,23 @@ function App() {
 	return (
 		<AppStyle className="">
 			<BrowserRouter>
-				<NavBar />
+				<NavBar 
+				/>
 				<main>
 					<Routes>
 						<Route path={"/"} element={<Home />} />
 						<Route path={"/categories"} element={<Categories />}>
-							<Route
-								path={"/categories/furnitures"}
-								element={<ProductCards />}
-							/>
+							{/* <Route
+								path={":categories"}
+								element={<Categories />}
+							/> */}
 						</Route>
-						<Route path={"/product"} element={<ProductPage />}>
+						{/* <Route path={"/product"} element={<ProductPage />}>
 							<Route
 								path={":product"}
 								element={<ProductPage />}
-							/>
-						</Route>
+							></Route>
+						</Route> */}
 					</Routes>
 				</main>
 				<Contact />
