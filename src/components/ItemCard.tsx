@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { setId } from "../../reducers/StoreSlice";
+import { setCategory, setId } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
 
 const CardStyle = styled.div`
@@ -40,11 +40,19 @@ interface Item {
 
 const ItemCard = ({ item }: { item: Item }) => {
 	const dispatch = useDispatch();
+
+	const handleDispatch = (item: Item) => {
+		dispatch(setId(item.id));
+		// dispatch(setCategory(item.description));
+	};
+
 	return (
 		<CardStyle className="">
-			<NavLink to={item.description}>
-				<img src={item.img} alt={""} 
-				onClick={() => dispatch(setId(item.id))}
+			<NavLink to={`/product/${item.id}`}>
+				<img
+					src={item.img}
+					alt={item.description}
+					onClick={() => handleDispatch(item)}
 				/>
 				<div className="productInfo">
 					<p className="title">{item.description}</p>

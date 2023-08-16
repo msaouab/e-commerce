@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import Logo from "/logo.png"
+import Logo from "/logo.png";
 import { NavLink } from "react-router-dom";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
+import { setCategory } from "../../reducers/StoreSlice";
+import { useDispatch } from "react-redux";
 
 interface NavBarStyleProps {
 	height: string;
@@ -99,13 +101,14 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 		}
 	}
 	@media (max-width: 576px) {
-		padding: 0 0 0 .5rem;
+		padding: 0 0 0 0.5rem;
 	}
 `;
 
 const NavBar = () => {
 	const [isOpen, setOpen] = useState(false);
 	const [scrollY, setScrollY] = useState(120);
+	const dispatch = useDispatch();
 
 	const handleScroll = () => {
 		setScrollY(window.scrollY === 0 ? 120 : 70);
@@ -132,13 +135,20 @@ const NavBar = () => {
 				<nav className={isOpen ? "open " : ""}>
 					<ul>
 						<li>
-							<NavLink to={"/categories"}>CATEGORIES</NavLink>
+							<NavLink
+								to={"/categories"}
+								onClick={() => dispatch(setCategory("all"))}
+							>
+								CATEGORIES
+							</NavLink>
 						</li>
 						<li>
 							<NavLink to={"/product"}>PRODUCT PAGE</NavLink>
 						</li>
 					</ul>
-					<li className="shopIcon">{<MdOutlineLocalGroceryStore />}</li>
+					<li className="shopIcon">
+						{<MdOutlineLocalGroceryStore />}
+					</li>
 				</nav>
 			</div>
 		</NavBarStyle>
