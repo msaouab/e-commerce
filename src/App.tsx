@@ -33,7 +33,7 @@ function App() {
 							/>
 						</Route>
 						<Route path={"/product"} element={<ProductPage />} >
-							<Route path={":product"} element={<ProductPage />}></Route>
+							{/* <Route path={":product"} element={<ProductPage />}></Route> */}
 						</Route>
 					</Routes>
 				</main>
