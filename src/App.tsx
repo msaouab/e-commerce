@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import ProductPage from "./pages/ProductPage";
+// import ProductPage from "./pages/ProductPage";
 // import Categories from "./pages/Categories";
 
 const AppStyle = styled.div`
@@ -32,7 +32,7 @@ function App() {
 								element={<Categories />}
 							/>
 						</Route> */}
-						<Route path={"/product"} element={<ProductPage />} />
+						{/* <Route path={"/product"} element={<ProductPage />} /> */}
 							{/* <Route path={":product"} element={<ProductPage />}></Route> */}
 						{/* </Route> */}
 					</Routes>
