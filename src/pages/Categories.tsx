@@ -1,8 +1,8 @@
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-// import NavCategory from "../components/NavCategory";
-// import ProductCards from "../components/ProdectCards";
+import NavCategory from "../components/NavCategory";
+import ProductCards from "../components/ProdectCards";
 import { useSelector } from "react-redux";
 import { RootState } from "../../reducers/store";
 
@@ -54,9 +54,9 @@ const Categories = () => {
 					</div>
 					<h1>{value}</h1>
 				</div>
-				{/* <NavCategory /> */}
+				<NavCategory />
 			</header>
-			{/* <ProductCards /> */}
+			<ProductCards />
 		</CategoryStyle>
 	);
 };
