@@ -126,9 +126,9 @@ const NavBar = () => {
 				<Hamburger toggled={isOpen} toggle={handleTogle} rounded />
 			</div>
 			<div className="navContainer container">
-				<NavLink to={"/"}>
+				<a href={"/"}>
 					<img src={Logo} alt="minimalist Ecommerce" />
-				</NavLink>
+				</a>
 				<nav className={isOpen ? "open " : ""}>
 					<ul>
 						<li>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { setId } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
@@ -42,7 +42,7 @@ const ItemCard = ({ item }: { item: Item }) => {
 	const dispatch = useDispatch();
 	return (
 		<CardStyle className="">
-			<Link to={item.description}>
+			<NavLink to={item.description}>
 				<img src={item.img} alt={""} 
 				onClick={() => dispatch(setId(item.id))}
 				/>
@@ -50,7 +50,7 @@ const ItemCard = ({ item }: { item: Item }) => {
 					<p className="title">{item.description}</p>
 					<p className="price">{item.price}$</p>
 				</div>
-			</Link>
+			</NavLink>
 		</CardStyle>
 	);
 };

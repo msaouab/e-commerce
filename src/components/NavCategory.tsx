@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import NavCategoryData from "../data/NavCategoryData";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../reducers/StoreSlice";
 
@@ -31,13 +31,13 @@ const NavCategory = () => {
 		<NavStyle className="">
 			<ul>
 				{NavCategoryData.map((item, index) => (
-					<Link
+					<NavLink
 						key={index}
 						to={item.path}
 						onClick={() => dispatch(setCategory(item.category))}
 						>
 						{item.name}
-					</Link>
+					</NavLink>
 				))}
 			</ul>
 		</NavStyle>
