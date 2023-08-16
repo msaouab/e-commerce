@@ -54,12 +54,18 @@ const item = data.head;
 const HeadHome = () => {
 	const dispatch = useDispatch();
 
+	const handleClick = (title: string) => {
+		dispatch(setCategory(title));
+		window.scrollTo(0, 0);
+	};
+
 	return (
 		<HeadStyle>
 			<NavLink
 				to={item.Item1.link}
 				className="item item1"
-				onClick={() => dispatch(setCategory(item.Item1.title))}
+				onClick={() => handleClick(item.Item1.title)}
+				
 			>
 				<img src={item.Item1.image} alt={item.Item1.alt} />
 				<p className="description">{item.Item1.content}</p>
@@ -67,7 +73,7 @@ const HeadHome = () => {
 			<NavLink
 				to={item.Item2.link}
 				className="item item2"
-				onClick={() => dispatch(setCategory(item.Item2.title))}
+				onClick={() => handleClick(item.Item1.title)}
 			>
 				<img src={item.Item2.image} alt={item.Item2.alt} />
 				<p className="description">{item.Item2.content}</p>
@@ -75,7 +81,7 @@ const HeadHome = () => {
 			<NavLink
 				to={item.Item3.link}
 				className="item item3"
-				onClick={() => dispatch(setCategory(item.Item3.title))}
+				onClick={() => handleClick(item.Item1.title)}
 			>
 				<img src={item.Item3.image} alt={item.Item3.alt} />
 				<p className="description">{item.Item3.content}</p>
@@ -83,7 +89,7 @@ const HeadHome = () => {
 			<NavLink
 				to={item.Item4.link}
 				className="item item4"
-				onClick={() => dispatch(setCategory(item.Item4.title))}
+				onClick={() => handleClick(item.Item1.title)}
 			>
 				<img src={item.Item4.image} alt={item.Item4.alt} />
 				<p className="description">{item.Item4.content}</p>

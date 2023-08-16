@@ -13,6 +13,7 @@ const CardStyle = styled.div`
 		justify-content: center;
 		align-items: start;
 		border: 2px solid rgba(0, 0, 0, 0.3);
+		transition: 0.1s ease-in-out;
 		& > img {
 			width: 100%;
 			height: 100%;
@@ -43,6 +44,7 @@ const ItemCard = ({ item }: { item: Item }) => {
 
 	const handleDispatch = (item: Item) => {
 		dispatch(setId(item.id));
+		window.scrollTo(0, 0);
 	};
 
 	return (
