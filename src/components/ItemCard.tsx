@@ -43,7 +43,6 @@ const ItemCard = ({ item }: { item: Item }) => {
 
 	const handleDispatch = (item: Item) => {
 		dispatch(setId(item.id));
-		// dispatch(setCategory(item.description));
 	};
 
 	return (

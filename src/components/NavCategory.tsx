@@ -27,6 +27,7 @@ const NavStyle = styled.nav`
 
 const NavCategory = () => {
 	const dispatch = useDispatch();
+
 	return (
 		<NavStyle className="">
 			<ul>

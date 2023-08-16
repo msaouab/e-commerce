@@ -11,7 +11,7 @@ const PageStyle = styled.div`
 const ProductPage = () => {
 	return (
 		<PageStyle className="container">
-			<Products />
+			{/* <Products /> */}
 			<Trending />
 		</PageStyle>
 	)
