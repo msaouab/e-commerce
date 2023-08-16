@@ -7,7 +7,7 @@ interface StoreState {
 
 const initialState: StoreState = {
 	category: "all",
-	id: 8,
+	id: 1,
 };
 
 const StoreSlice = createSlice({

@@ -9,13 +9,15 @@ const ProductStyle = styled.section`
 	& > article {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 4rem;
 	}
 `;
 
 const Products = () => {
 	const id = useSelector((state: RootState) => state.id);
 	const Item = items.filter((item) => item.id === id);
+
+	console.log(id);
 
 	return (
 		<ProductStyle className="">

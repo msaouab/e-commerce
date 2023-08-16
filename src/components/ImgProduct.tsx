@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ImgStyle = styled.div`
@@ -27,7 +27,7 @@ const ImgStyle = styled.div`
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
-		height: 100%;
+		height: 20%;
 		width: 20%;
 		& > img {
 			height: 100%;
@@ -51,6 +51,14 @@ interface Props {
 const ImgProduct: React.FC<Props> = ({ img, AllImg }) => {
 	const [selectedImg, setSelectedImg] = useState(img);
 
+	const handleSelectedImg = (addImg: string) => {
+		setSelectedImg(addImg);
+	};
+
+	useEffect(() => {
+		handleSelectedImg(img);
+	}, [img]);
+
 	return (
 		<ImgStyle>
 			<div className="">
@@ -60,14 +68,14 @@ const ImgProduct: React.FC<Props> = ({ img, AllImg }) => {
 				<img
 					src={img}
 					alt=""
-					onMouseEnter={() => setSelectedImg(img)}
+					onMouseEnter={() => handleSelectedImg(img)}
 				/>
 				{AllImg.map((elem, index) => (
 					<img
 						key={index}
 						src={elem}
 						alt=""
-						onMouseEnter={() => setSelectedImg(elem)}
+						onMouseEnter={() => handleSelectedImg(elem)}
 					/>
 				))}
 			</div>

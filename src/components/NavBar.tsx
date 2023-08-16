@@ -135,7 +135,7 @@ const NavBar = () => {
 							<NavLink to={"/categories"}>CATEGORIES</NavLink>
 						</li>
 						<li>
-							<NavLink to={"/Product"}>PRODUCT PAGE</NavLink>
+							<NavLink to={"/product"}>PRODUCT PAGE</NavLink>
 						</li>
 					</ul>
 					<li className="shopIcon">{<MdOutlineLocalGroceryStore />}</li>

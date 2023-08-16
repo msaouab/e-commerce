@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { setId } from "../../reducers/StoreSlice";
+import { useDispatch } from "react-redux";
 
 const CardStyle = styled.div`
 	& > a {
@@ -37,10 +39,13 @@ interface Item {
 }
 
 const ItemCard = ({ item }: { item: Item }) => {
+	const dispatch = useDispatch();
 	return (
 		<CardStyle className="">
 			<Link to={item.description}>
-				<img src={item.img} alt={""} />
+				<img src={item.img} alt={""} 
+				onClick={() => dispatch(setId(item.id))}
+				/>
 				<div className="productInfo">
 					<p className="title">{item.description}</p>
 					<p className="price">{item.price}$</p>
