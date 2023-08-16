@@ -27,16 +27,16 @@ function App() {
 					<Routes>
 						<Route path={"/"} element={<Home />} />
 						<Route path={"/categories"} element={<Categories />}>
-							<Route
+							{/* <Route
 								path={":categories"}
 								element={<Categories />}
-							/>
+							/> */}
 						</Route>
 						<Route path={"/product"} element={<ProductPage />}>
 							<Route
 								path={":product"}
 								element={<ProductPage />}
-							></Route>
+							/>
 						</Route>
 					</Routes>
 				</main>
