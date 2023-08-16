@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import NavBar from "./components/NavBar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 // import ProductPage from "./pages/ProductPage";
@@ -21,7 +21,7 @@ const AppStyle = styled.div`
 function App() {
 	return (
 		<AppStyle className="">
-			<BrowserRouter>
+			<Router>
 				<NavBar 
 				/>
 				<main>
@@ -43,7 +43,7 @@ function App() {
 				</main>
 				<Contact />
 				<Footer />
-			</BrowserRouter>
+			</Router>
 		</AppStyle>
 	);
 }
