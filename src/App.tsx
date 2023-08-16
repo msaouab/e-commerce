@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Contact from "./components/Contact";
 import ProductPage from "./pages/ProductPage";
 import Categories from "./pages/Categories";
+import ProductCards from "./components/ProdectCards";
 
 const AppStyle = styled.div`
 	display: flex;
@@ -28,8 +29,8 @@ function App() {
 						<Route path={"/"} element={<Home />} />
 						<Route path={"/categories"} element={<Categories />}>
 							<Route
-								path={":categories"}
-								element={<Categories />}
+								path={"/categories/furnitures"}
+								element={<ProductCards />}
 							/>
 						</Route>
 						<Route path={"/product"} element={<ProductPage />}>
