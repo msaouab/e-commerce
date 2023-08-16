@@ -3,9 +3,9 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-// import ProductPage from "./pages/ProductPage";
-// import Categories from "./pages/Categories";
+import Contact from "./components/Contact";
+import ProductPage from "./pages/ProductPage";
+import Categories from "./pages/Categories";
 
 const AppStyle = styled.div`
 	display: flex;
@@ -26,15 +26,18 @@ function App() {
 				<main>
 					<Routes>
 						<Route path={"/"} element={<Home />} />
-						{/* <Route path={"/categories"} element={<Categories />} >
+						<Route path={"/categories"} element={<Categories />}>
 							<Route
 								path={":categories"}
 								element={<Categories />}
 							/>
-						</Route> */}
-						{/* <Route path={"/product"} element={<ProductPage />} /> */}
-							{/* <Route path={":product"} element={<ProductPage />}></Route> */}
-						{/* </Route> */}
+						</Route>
+						<Route path={"/product"} element={<ProductPage />}>
+							<Route
+								path={":product"}
+								element={<ProductPage />}
+							></Route>
+						</Route>
 					</Routes>
 				</main>
 				<Contact />
