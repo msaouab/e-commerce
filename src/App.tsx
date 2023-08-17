@@ -22,8 +22,7 @@ function App() {
 	return (
 		<AppStyle className="">
 			<BrowserRouter>
-				<NavBar 
-				/>
+				<NavBar />
 				<main>
 					<Routes>
 						<Route path={"/"} element={<Home />} />

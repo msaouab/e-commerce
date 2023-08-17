@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Logo from "/logo.png";
 import { Link } from "react-router-dom";
-import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import { setCategory } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
+import StoreCart from "./StoreCart";
 
 interface NavBarStyleProps {
 	height: string;
@@ -60,14 +60,6 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 					border-bottom: 2px solid #000;
 				}
 			}
-			& > .shopIcon {
-				margin-right: 1rem;
-				list-style: none;
-				cursor: pointer;
-				& > svg {
-					font-size: 1.5rem;
-				}
-			}
 		}
 	}
 	@media (max-width: 1200px) {
@@ -75,7 +67,6 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 	}
 	@media (max-width: 768px) {
 		flex-direction: row-reverse;
-		/* position: relative; */
 		& > .hamburger {
 			display: block;
 		}
@@ -146,9 +137,7 @@ const NavBar = () => {
 							<Link to={"/product"}>PRODUCT PAGE</Link>
 						</li>
 					</ul>
-					<li className="shopIcon">
-						{<MdOutlineLocalGroceryStore />}
-					</li>
+					<StoreCart />
 				</nav>
 			</div>
 		</NavBarStyle>
