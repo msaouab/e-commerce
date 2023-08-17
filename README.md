@@ -6,7 +6,7 @@
 ## How to Run
 To run the app locally, follow these steps:
 
-Clone the repository from this link: Take-Home-Assignment Repository
+Clone the repository from this link: [e-commerce](https://e-commerce-msaouab.vercel.app/) Repository
 
 In the root folder, run the following commands:
 
