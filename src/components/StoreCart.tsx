@@ -129,7 +129,7 @@ const StoreCart = () => {
 			</Button>
 			<Drawer
 				open={open}
-				anchor={"right"}
+				anchor={"left"}
 				onClose={() => setOpen(false)}
 				className="drawer"
 				PaperProps={{
