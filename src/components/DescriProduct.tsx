@@ -67,12 +67,19 @@ const ProductStyle = styled.div`
 `;
 
 
-interface Props {
-	text: string;
-	price: number;
+interface Item {
+	item: {
+		id: number;
+		description: string;
+		specs: string;
+		price: number;
+		img: string;
+		otherImgs: string[];
+	};
 }
 
-const DescriProduct: React.FC<Props> = ({ text, price }) => {
+const DescriProduct: React.FC<Item> = ({ item }) => {
+	const { description, price } = item;
 	const [qte, setQte] = useState(1);
 	const totalPrice = price * qte;
 
@@ -85,7 +92,7 @@ const DescriProduct: React.FC<Props> = ({ text, price }) => {
 
 	return (
 		<ProductStyle>
-			<p>{text}</p>
+			<p>{description}</p>
 			<div className="qte">
 				<p>Quantity</p>
 				<div className="qteBtn">
@@ -95,7 +102,7 @@ const DescriProduct: React.FC<Props> = ({ text, price }) => {
 				</div>
 				<p>{totalPrice}$</p>
 			</div>
-			<BuyProduct />
+			<BuyProduct item={item} />
 		</ProductStyle>
 	);
 };

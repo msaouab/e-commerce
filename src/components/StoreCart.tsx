@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import empty from "../img/cart/empty-cart.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../reducers/store";
+import AddItemToCart from "./AddItemToCart";
+import items from "../data/AllData";
 
 const Style = styled.div`
 	& > Button {
@@ -91,6 +93,8 @@ const StoreCart = () => {
 	const [open, setOpen] = useState(false);
 	const [width, setWidth] = useState(window.innerWidth);
 	const counter = useSelector((state: RootState) => state.countProduct);
+	const selectedId = useSelector((state: RootState) => state.selectedId);
+	const item = items.find((item) => item.id === selectedId);
 
 	const handleResize = () => {
 		setWidth(window.innerWidth);
@@ -113,11 +117,17 @@ const StoreCart = () => {
 				</ListItem>
 			</ListStyle>
 			<Divider />
-			<ContentStyle>
-				<img src={empty} alt="" />
-				<p>Your cart is empty</p>
-				<button onClick={() => setOpen(false)}>Keep Browsing</button>
-			</ContentStyle>
+			{selectedId === 0 ? (
+				<ContentStyle>
+					<img src={empty} alt="" />
+					<p>Your cart is empty</p>
+					<button onClick={() => setOpen(false)}>
+						Keep Browsing
+					</button>
+				</ContentStyle>
+			) : (
+				<AddItemToCart item={item} />
+			)}
 		</Box>
 	);
 

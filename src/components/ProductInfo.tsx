@@ -30,6 +30,7 @@ const ProductStyle = styled.section`
 
 interface Props {
 	item: {
+		id: number;
 		description: string;
 		specs: string;
 		price: number;
@@ -39,14 +40,14 @@ interface Props {
 }
 
 const ProductInfo: React.FC<Props> = ({ item }) => {
-	const { description, specs, price, img, otherImgs } = item;
+	const { description, img, otherImgs } = item;
 
 	return (
 		<ProductStyle>
 			<h2>{description}</h2>
 			<div className="">
 				<ImgProduct img={img} AllImg={otherImgs} />
-				<DescriProduct text={specs} price={price} />
+				<DescriProduct item={item} />
 			</div>
 		</ProductStyle>
 	);

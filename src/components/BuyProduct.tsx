@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { setCount } from "../../reducers/StoreSlice";
-import { useEffect, useState } from "react";
+import { setSelectedId } from "../../reducers/StoreSlice";
 
 const Style = styled.div`
 	display: flex;
@@ -42,25 +41,40 @@ const Style = styled.div`
 	}
 `;
 
-const BuyProduct = () => {
+interface Item {
+	item: {
+		id: number;
+		description: string;
+		specs: string;
+		price: number;
+		img: string;
+		otherImgs: string[];
+	};
+}
+
+const BuyProduct: React.FC<Item> = ({ item }) => {
+	const { id } = item;
 	const dispatch = useDispatch();
-	const [counter, setCounter] = useState(1);
+	// const [counter, setCounter] = useState(1);
 
-	useEffect(() => {
-		const saveCounter = localStorage.getItem("counter");
-		if (saveCounter !== null) {
-			dispatch(setCount(Number(saveCounter)));
-		}
-	}, [dispatch]);
+	console.log('id', id);
 
-	useEffect(() => {
-		localStorage.setItem("counter", counter.toString());
-	}, [counter]);
+	// useEffect(() => {
+	// 	const saveCounter = localStorage.getItem("counter");
+	// 	if (saveCounter !== null) {
+	// 		dispatch(setCount(Number(saveCounter)));
+	// 	}
+	// }, [dispatch]);
+
+	// useEffect(() => {
+	// 	localStorage.setItem("counter", counter.toString());
+	// }, [counter]);
 
 	const handleClick = () => {
-		const newCounter = counter + 1;
-		setCounter(newCounter);
-		dispatch(setCount(counter));
+		// const newCounter = counter + 1;
+		// setCounter(newCounter);
+		// dispatch(setCount(counter));
+		dispatch(setSelectedId(id));
 	};
 
 	return (

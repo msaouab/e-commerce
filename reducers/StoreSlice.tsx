@@ -4,12 +4,14 @@ interface StoreState {
 	category: string;
 	id: number;
 	countProduct: number;
+	selectedId: number;
 }
 
 const initialState: StoreState = {
 	category: "all",
 	id: 1,
 	countProduct: 0,
+	selectedId: 0,
 };
 
 const StoreSlice = createSlice({
@@ -24,9 +26,12 @@ const StoreSlice = createSlice({
 		},
 		setCount: (state, action: PayloadAction<number>) => {
 			state.countProduct = action.payload;
+		},
+		setSelectedId: (state, action: PayloadAction<number>) => {
+			state.selectedId = action.payload;
 		}
 	},
 });
 
-export const { setCategory, setId, setCount } = StoreSlice.actions;
+export const { setCategory, setId, setCount, setSelectedId } = StoreSlice.actions;
 export default StoreSlice.reducer;
