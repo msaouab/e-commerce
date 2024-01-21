@@ -3,8 +3,8 @@ import Trending from "../components/Trending";
 import { useSelector } from "react-redux";
 import { RootState } from "../../reducers/store";
 import ProductInfo from "../components/ProductInfo";
-import DescriptionCards from "../components/DescriptionCards";
-import items from "../data/AllData";
+import Kpis from "../components/Kpis";
+import Products from "../data/AllData";
 
 const PageStyle = styled.div`
 	display: flex;
@@ -19,16 +19,17 @@ const PageStyle = styled.div`
 
 const ProductPage = () => {
 	const id = useSelector((state: RootState) => state.id);
-	const Item = items.filter((item) => item.id === id);
+	const Item = Products.find((item) => item.id === id);
+
+	if (!Item) {
+		return <div>Product not found</div>;
+	}
+	const { texture, weight, size } = Item;
 	return (
 		<PageStyle className="container">
 			<article>
-				<ProductInfo item={Item[0]} />
-				<DescriptionCards
-					texture={Item[0].texture}
-					weight={Item[0].weight}
-					size={Item[0].size}
-				/>
+				<ProductInfo item={Item} />
+				<Kpis texture={texture} weight={weight} size={size} />
 			</article>
 			<Trending />
 		</PageStyle>

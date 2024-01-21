@@ -6,10 +6,9 @@ const ImgStyle = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
-	width: 100%;
+	max-width: 50%;
 	gap: 1rem;
-	& > div {
+	& > .mainImg {
 		display: flex;
 		justify-content: center;
 		height: 70%;
@@ -18,7 +17,7 @@ const ImgStyle = styled.div`
 			height: 100%;
 			width: 100%;
 			max-width: 100%;
-			object-fit: cover;
+			object-fit: contain;
 			cursor: pointer;
 		}
 	}
@@ -41,6 +40,9 @@ const ImgStyle = styled.div`
 			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 		}
 	}
+	@media (max-width: 850px) {
+		max-width: 100%;
+	}
 `;
 
 interface Props {
@@ -61,7 +63,7 @@ const ImgProduct: React.FC<Props> = ({ img, AllImg }) => {
 
 	return (
 		<ImgStyle>
-			<div className="">
+			<div className="mainImg">
 				<img src={selectedImg} alt="" className="selectedImg" />
 			</div>
 			<div className="allImg">

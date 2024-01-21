@@ -1,51 +1,41 @@
 import styled from "styled-components";
 import DescriProduct from "./DescriProduct";
 import ImgProduct from "./ImgProduct";
+import { Props } from "../_types/Props";
 
 const ProductStyle = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: .5rem;
+	align-items: center;
+	gap: 0.5rem;
 	margin-top: 2rem;
+	position: relative;
 	& > h2 {
-		text-align: center;
+		position: absolute;
+		top: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
 	}
-	& > div {
+	& > .productInfo {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		gap: 1rem;
-		& > div {
-			width: 50%;
-		}
 	}
 	@media (max-width: 850px) {
-		& > div {
+		& > .productInfo {
 			flex-direction: column;
-			& > div {
-				width: 100%;
-			}
 		}
 	}
 `;
 
-interface Props {
-	item: {
-		id: number;
-		description: string;
-		specs: string;
-		price: number;
-		img: string;
-		otherImgs: string[];
-	};
-}
-
-const ProductInfo: React.FC<Props> = ({ item }) => {
-	const { description, img, otherImgs } = item;
+const ProductInfo = ({ item }: Props) => {
+	const { img, otherImgs } = item;
 
 	return (
 		<ProductStyle>
-			<h2>{description}</h2>
-			<div className="">
+			<div className="productInfo">
 				<ImgProduct img={img} AllImg={otherImgs} />
 				<DescriProduct item={item} />
 			</div>

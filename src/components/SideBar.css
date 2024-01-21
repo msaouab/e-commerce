@@ -1,0 +1,82 @@
+.p-sidebar {
+	width: 500px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.p-sidebar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border-bottom: 1px solid #eee;
+}
+
+.headerSideBar {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.p-sidebar-content {
+	padding: 1rem 0 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.contentSideBar {
+	border: 1px solid #eee;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.empty-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	height: 100%;
+}
+
+.empty-card img {
+	width: 100%;
+	max-width: 300px;
+}
+
+.empty-card p {
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+
+.empty-card button,
+.footerSideBar button {
+	padding: 1rem 2rem;
+	background-color: #fff;
+	border: 2px solid #000;
+	font-size: 1.5rem;
+	font-weight: 900;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.empty-card button:hover,
+.footerSideBar button:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.footerSideBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	border-top: 1px solid #eee;
+}
+
+.footerSideBar .totalSideBar p {
+	font-size: 20px;
+	font-weight: 900;
+}

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const CardsStyle = styled.div`
+const KpisStyle = styled.div`
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
@@ -32,24 +32,23 @@ interface Props {
 	size: string;
 }
 
-const DescriptionCards: React.FC<Props> = ({ texture, weight, size }) => {
-
+const Kpis: React.FC<Props> = ({ texture, weight, size }) => {
 	return (
-		<CardsStyle>
+		<KpisStyle>
 			<div>
-				<p className='key'>Texture:</p>
-				<p className='value'>{texture}</p>
+				<p className="key">Texture:</p>
+				<p className="value">{texture}</p>
 			</div>
 			<div>
-				<p className='key'>Weight:</p>
-				<p className='value'>{weight}</p>
+				<p className="key">Weight:</p>
+				<p className="value">{weight}</p>
 			</div>
 			<div>
-				<p className='key'>Size:</p>
-				<p className='value'>{size}</p>
+				<p className="key">Size:</p>
+				<p className="value">{size}</p>
 			</div>
-		</CardsStyle>
-	)
+		</KpisStyle>
+	);
 };
 
-export default DescriptionCards;
+export default Kpis;

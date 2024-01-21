@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import { setCategory } from "../../reducers/StoreSlice";
 import { useDispatch } from "react-redux";
-import StoreCart from "./StoreCart";
+import StoreCart from "./SideBar";
 
 interface NavBarStyleProps {
 	height: string;
@@ -21,6 +21,7 @@ const NavBarStyle = styled.header<NavBarStyleProps>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 100;
 	& > .hamburger {
 		display: none;
 	}

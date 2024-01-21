@@ -1,117 +1,111 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import styled from "styled-components";
+import { Props } from "../_types/Props";
+import { useDispatch, useSelector } from "react-redux";
+import { setSeletedItem } from "../../reducers/StoreSlice";
+import "./AddItemToCart.css";
+import { RootState } from "../../reducers/store";
 
-const Style = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 0.5rem;
-	& > .image {
-		width: 20%;
-		& > img {
-			min-width: 100%;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
-	& > div {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 80%;
-		height: 100%;
-		& > div {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: flex-start;
-			gap: 0.5rem;
-			& > p {
-				font-size: 1.2rem;
-				font-weight: 500;
-			}
-			& > .qteBtn {
-				border: 1px solid black;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				& > p {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 1.5rem;
-					aspect-ratio: 1;
-					text-align: center;
-					border-left: 1px solid black;
-					border-right: 1px solid black;
-				}
-				& > button {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 1.5rem;
-					aspect-ratio: 1;
-					font-size: 1.5rem;
-					border: none;
-					cursor: pointer;
-					background-color: #fff;
-					&:hover {
-						background-color: #e5e5e5;
-					}
-				}
-			}
-		}
-	}
-`;
-
-interface Item {
-	item: {
-		id: number;
-		description: string;
-		price: number;
-		img: string;
-	};
-}
-
-const AddItemToCart: React.FC<Item> = ({ item }) => {
-	const [qte, setQte] = useState(1);
-	const { description, price, img } = item;
+const AddItemToCart = ({ item }: Props) => {
+	const dispatch = useDispatch();
+	const selectedItems = useSelector((state: RootState) => state.seletedItem);
+	const quantity =
+		selectedItems.find((selected) => selected.id === item.id)?.quantity ||
+		1;
+	const { name, price, img } = item;
+	const totalPrice = price * quantity;
 
 	const increQte = () => {
-		setQte(qte + 1);
+		const newQuantity = quantity + 1;
+		dispatch(
+			setSeletedItem([
+				{
+					id: item.id,
+					quantity: newQuantity,
+				},
+			]),
+		);
 	};
+
+	useEffect(() => {
+		const existingItem = selectedItems.find(
+			(selected) => selected.id === item.id,
+		);
+
+		if (existingItem) {
+			const updatedSelectedItems = selectedItems.map((selected) =>
+				selected.id === item.id
+					? { ...selected, quantity: quantity }
+					: selected,
+			);
+
+			dispatch(setSeletedItem(updatedSelectedItems));
+		} else {
+			dispatch(
+				setSeletedItem([
+					...selectedItems,
+					{
+						id: item.id,
+						quantity: quantity,
+					},
+				]),
+			);
+		}
+	}, [dispatch, item, quantity]);
+
 	const decrQre = () => {
-		if (qte > 1) setQte(qte - 1);
+		if (quantity > 1) {
+			const newQuantity = quantity - 1;
+			dispatch(
+				setSeletedItem([
+					{
+						id: item.id,
+						quantity: newQuantity,
+					},
+				]),
+			);
+		}
+	};
+
+	const handleRemoveProduct = (productId: number) => {
+		const updatedSelectedItem = selectedItems.filter(
+			(item) => item.id !== productId,
+		);
+		dispatch(setSeletedItem(updatedSelectedItem));
 	};
 
 	return (
-		<Style className="debug">
-			<div className="image">
-				<img src={img} alt={description} />
+		<div className="AddItemToCart">
+			<div className="ProductImage">
+				<img src={img} alt={name} />
 			</div>
-			<div>
-				<div>
-					<p>{description}</p>
-					<div className="qteBtn">
-						<button onClick={decrQre} className="increment">
+			<div className="productInfo">
+				<div className="leftSide">
+					<p className="productName">{name}</p>
+					<div className="qteBtnSideBar">
+						<button onClick={() => decrQre()} className="increment">
 							-
 						</button>
-						<p>{qte}</p>
-						<button onClick={increQte} className="decrement">
+						<p>{quantity}</p>
+						<button
+							onClick={() => increQte()}
+							className="decrement"
+						>
 							+
 						</button>
 					</div>
 				</div>
-				<div>
-					<p>{price}$</p>
-					<button className="close">
+				<div className="rightSide">
+					<span
+						className="remove"
+						onClick={() => handleRemoveProduct(item.id)}
+					>
 						<AiOutlineCloseCircle />
-					</button>
+					</span>
+					<p className="productPrice">{totalPrice} $</p>
 				</div>
 			</div>
-		</Style>
+		</div>
 	);
 };
 

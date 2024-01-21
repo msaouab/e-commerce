@@ -1,0 +1,101 @@
+.AddItemToCart {
+	display: flex;
+	border: 1px solid #000;
+}
+
+.ProductImage {
+	width: 100%;
+	max-width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 100%;
+	}
+}
+
+.productInfo {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.5rem;
+	width: 100%;
+	padding: 0.5rem;
+	background-color: #eee;
+}
+
+.leftSide {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.productName {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.qteBtnSideBar {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.qteBtnSideBar .increment,
+.qteBtnSideBar .decrement {
+	border: 1px solid #000;
+	border-radius: 3px;
+	cursor: pointer;
+	width: 1.5rem;
+	height: 1.5rem;
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: transparent;
+	transition: all 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.qteBtnSideBar .increment:hover,
+.qteBtnSideBar .decrement:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.qteBtnSideBar p {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.rightSide {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 0.5rem;
+}
+
+.rightSide .remove {
+	border: none;
+	cursor: pointer;
+	font-size: 1.5rem;
+	font-weight: 700;
+	transition: all 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.rightSide .remove:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.rightSide .productPrice {
+	font-size: 1.5rem;
+	font-weight: 700;
+}

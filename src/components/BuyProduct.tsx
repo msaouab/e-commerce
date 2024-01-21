@@ -1,6 +1,8 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { setSelectedId } from "../../reducers/StoreSlice";
+import { setSeletedItem } from "../../reducers/StoreSlice";
+import { Props } from "../_types/Props";
+import { RootState } from "../../reducers/store";
 
 const Style = styled.div`
 	display: flex;
@@ -39,47 +41,41 @@ const Style = styled.div`
 		background-color: #fff;
 		color: #b6002c;
 	}
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
 `;
 
-interface Item {
-	item: {
-		id: number;
-		description: string;
-		specs: string;
-		price: number;
-		img: string;
-		otherImgs: string[];
-	};
-}
-
-const BuyProduct: React.FC<Item> = ({ item }) => {
-	const { id } = item;
+const BuyProduct = ({ item }: Props) => {
 	const dispatch = useDispatch();
-	// const [counter, setCounter] = useState(1);
+	const quantity = useSelector((state: RootState) => state.quantity);
+	const selectedItems = useSelector((state: RootState) => state.seletedItem);
 
-	console.log('id', id);
+	const handleClick = (id: number) => {
+		const existingItem = selectedItems.find((item) => item.id === id);
 
-	// useEffect(() => {
-	// 	const saveCounter = localStorage.getItem("counter");
-	// 	if (saveCounter !== null) {
-	// 		dispatch(setCount(Number(saveCounter)));
-	// 	}
-	// }, [dispatch]);
+		if (existingItem) {
+			const updatedSelectedItems = selectedItems.map((item) =>
+				item.id === id ? { ...item, quantity: quantity } : item,
+			);
 
-	// useEffect(() => {
-	// 	localStorage.setItem("counter", counter.toString());
-	// }, [counter]);
-
-	const handleClick = () => {
-		// const newCounter = counter + 1;
-		// setCounter(newCounter);
-		// dispatch(setCount(counter));
-		dispatch(setSelectedId(id));
+			dispatch(setSeletedItem(updatedSelectedItems));
+		} else {
+			dispatch(
+				setSeletedItem([
+					...selectedItems,
+					{
+						id: id,
+						quantity: quantity,
+					},
+				]),
+			);
+		}
 	};
 
 	return (
 		<Style className="">
-			<button className="btn add" onClick={handleClick}>
+			<button className="btn add" onClick={() => handleClick(item.id)}>
 				add to cart
 			</button>
 			<button className="btn buy">buy now</button>

@@ -1,106 +1,107 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import BuyProduct from "./BuyProduct";
+import { Props } from "../_types/Props";
+import { useDispatch } from "react-redux";
+import { setQuantity } from "../../reducers/StoreSlice";
 
 const ProductStyle = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
-	gap: 2rem;
-	padding: 8rem 5rem 8rem;
+	justify-content: center;
+	gap: 3rem;
+	padding: 1rem;
 	background-color: #e5e5e5;
+	padding: 2rem;
+	/* max-height: 600px; */
 	& > p {
-		font-size: 1.2rem;
-		line-height: 30px;
-		font-weight: 400;
+		font-size: 1.5rem;
 	}
 	& > .qte {
-		width: 100%;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		font-size: 1.5rem;
+		gap: 1rem;
+		& > p {
+			font-size: 1.5rem;
+		}
+		& > .price {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #000;
+		}
 		& > .qteBtn {
-			border: 1px solid black;
 			display: flex;
-			justify-content: space-between;
 			align-items: center;
-			& > p {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 3rem;
-				aspect-ratio: 1;
-				text-align: center;
-				border-left: 1px solid black;
-				border-right: 1px solid black;
-			}
+			gap: 1rem;
 			& > button {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 3rem;
-				aspect-ratio: 1;
-				font-size: 1.5rem;
-				border: none;
-				cursor: pointer;
 				background-color: #fff;
+				border: 1px solid rgba(0, 0, 0, 0.4);
+				border-radius: 50%;
+				height: 2rem;
+				width: 2rem;
+				cursor: pointer;
+				font-size: 1.5rem;
 				&:hover {
 					background-color: #e5e5e5;
+					color: #000;
 				}
 			}
+			& > p {
+				font-size: 1.5rem;
+			}
 		}
-	}
-	@media (max-width: 1000px) {
-		padding: 3rem 3rem;
-	}
-	@media (max-width: 850px) {
-		padding: 2rem 1rem;
-	}
-	@media (max-width: 400px) {
-		& > .qte {
+		@media (max-width: 400px) {
 			flex-direction: column;
-			gap: 1rem;
 		}
 	}
 `;
 
-
-interface Item {
-	item: {
-		id: number;
-		description: string;
-		specs: string;
-		price: number;
-		img: string;
-		otherImgs: string[];
-	};
-}
-
-const DescriProduct: React.FC<Item> = ({ item }) => {
-	const { description, price } = item;
+const DescriProduct = ({ item }: Props) => {
+	const dispatch = useDispatch();
+	const { price, specs, name } = item;
 	const [qte, setQte] = useState(1);
 	const totalPrice = price * qte;
 
+	useEffect(() => {
+		setQte(1);
+		dispatch(setQuantity(1));
+	}, [dispatch, item]);
+
 	const increQte = () => {
-		setQte(qte + 1);
+		setQte((prevQte) => {
+			const newQte = prevQte + 1;
+			dispatch(setQuantity(newQte));
+			return newQte;
+		});
 	};
+
 	const decrQre = () => {
-		if (qte > 1) setQte(qte - 1);
+		if (qte > 1) {
+			setQte((prevQte) => {
+				const newQte = prevQte - 1;
+				dispatch(setQuantity(newQte));
+				return newQte;
+			});
+		}
 	};
 
 	return (
 		<ProductStyle>
-			<p>{description}</p>
+			<h2>{name}</h2>
+			<p>{specs}</p>
 			<div className="qte">
 				<p>Quantity</p>
 				<div className="qteBtn">
-					<button onClick={decrQre} className="increment">-</button>
+					<button onClick={() => decrQre()} className="increment">
+						-
+					</button>
 					<p>{qte}</p>
-					<button onClick={increQte} className="decrement">+</button>
+					<button onClick={() => increQte()} className="decrement">
+						+
+					</button>
 				</div>
-				<p>{totalPrice}$</p>
+				<p className="price">{totalPrice}$</p>
 			</div>
 			<BuyProduct item={item} />
 		</ProductStyle>

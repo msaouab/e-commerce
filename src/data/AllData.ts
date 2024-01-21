@@ -58,13 +58,14 @@ import MatLamp1 from "../img/products/otherProducts/mat1.webp";
 import MatLamp2 from "../img/products/otherProducts/mat2.webp";
 import Comfy1 from "../img/products/otherProducts/comfy1.webp";
 import Comfy2 from "../img/products/otherProducts/comfy2.webp";
+import { ProductType } from "../_types/ProductType";
 
-const items = [
+const Products: ProductType[] = [
 	{
 		id: 1,
 		category: "chair",
 		img: Img1,
-		description: "Little Armchair Sheepskin",
+		name: "Little Armchair Sheepskin",
 		price: 986,
 		otherImgs: [OtherImgs1, OtherImgs2],
 		specs:
@@ -77,7 +78,7 @@ const items = [
 		id: 2,
 		category: "kitchen",
 		img: Img2,
-		description: "Pop-Up Toaster",
+		name: "Pop-Up Toaster",
 		price: 45,
 		otherImgs: [Toster1, Toster2],
 		specs:
@@ -90,7 +91,7 @@ const items = [
 		id: 3,
 		category: "lamp",
 		img: Img3,
-		description: "Lamp Light Blue",
+		name: "Lamp Light Blue",
 		price: 79,
 		otherImgs: [LampBlue1, LampBlue2],
 		specs:
@@ -103,7 +104,7 @@ const items = [
 		id: 4,
 		category: "furniture",
 		img: Img4,
-		description: "Pulp Unit - 5 Compartments",
+		name: "Pulp Unit - 5 Compartments",
 		price: 254,
 		otherImgs: [PulpUnit1, PulpUnit2],
 		specs:
@@ -116,7 +117,7 @@ const items = [
 		id: 5,
 		category: "lamp",
 		img: Img5,
-		description: "Golden Modern Light",
+		name: "Golden Modern Light",
 		price: 189,
 		otherImgs: [ModernGold1, ModernGold2],
 		specs:
@@ -129,7 +130,7 @@ const items = [
 		id: 6,
 		category: "skin-care",
 		img: Img6,
-		description: "Body Oil 200ml",
+		name: "Body Oil 200ml",
 		price: 67,
 		otherImgs: [CleaningOil1, CleaningOil2],
 		specs:
@@ -142,7 +143,7 @@ const items = [
 		id: 7,
 		category: "lamp",
 		img: Img7,
-		description: "Black and White Lamp",
+		name: "Black and White Lamp",
 		price: 220,
 		otherImgs: [BlackAndWhite1, BlackAndWhite2],
 		specs:
@@ -155,7 +156,7 @@ const items = [
 		id: 8,
 		category: "furniture",
 		img: Img8,
-		description: "Gejst Shelf A Black Ash/Black",
+		name: "Gejst Shelf A Black Ash/Black",
 		price: 115,
 		otherImgs: [Shelf1, Shelf2],
 		specs:
@@ -168,7 +169,7 @@ const items = [
 		id: 9,
 		category: "furniture",
 		img: Img9,
-		description: "Cube Lolo Vase Black",
+		name: "Cube Lolo Vase Black",
 		price: 161,
 		otherImgs: [Vase1, Vase2],
 		specs:
@@ -181,7 +182,7 @@ const items = [
 		id: 10,
 		category: "chair",
 		img: Img10,
-		description: "Traditional Armchair",
+		name: "Traditional Armchair",
 		price: 89,
 		otherImgs: [ChairBoom1, ChairBoom2],
 		specs:
@@ -194,7 +195,7 @@ const items = [
 		id: 11,
 		category: "lamp",
 		img: Img11,
-		description: "The Sun Pendant Black",
+		name: "The Sun Pendant Black",
 		price: 160,
 		otherImgs: [BlackLamp1, BlackLamp2],
 		specs:
@@ -207,7 +208,7 @@ const items = [
 		id: 12,
 		category: "lamp",
 		img: Img12,
-		description: "Simple Golden Lamp",
+		name: "Simple Golden Lamp",
 		price: 220,
 		otherImgs: [GoldenLamp1, GoldenLamp2],
 		specs:
@@ -220,7 +221,7 @@ const items = [
 		id: 13,
 		category: "skin-care",
 		img: Img13,
-		description: "Unbleached Cotton Pads 180",
+		name: "Unbleached Cotton Pads 180",
 		price: 33,
 		otherImgs: [Cotton1, Cotton2],
 		specs:
@@ -233,7 +234,7 @@ const items = [
 		id: 14,
 		category: "chair",
 		img: Img14,
-		description: "Oak Spanish Chair",
+		name: "Oak Spanish Chair",
 		price: 520,
 		otherImgs: [WoodChair1, WoodChair2],
 		specs:
@@ -246,7 +247,7 @@ const items = [
 		id: 15,
 		category: "chair",
 		img: Img15,
-		description: "Copenhagen Armchair",
+		name: "Copenhagen Armchair",
 		price: 330,
 		otherImgs: [Copenhagen1, Copenhagen2],
 		specs:
@@ -259,7 +260,7 @@ const items = [
 		id: 16,
 		category: "electronic",
 		img: Img16,
-		description: "Anti Dark Light",
+		name: "Anti Dark Light",
 		price: 120,
 		otherImgs: [Cam1, Cam2],
 		specs:
@@ -272,7 +273,7 @@ const items = [
 		id: 17,
 		category: "lamp",
 		img: Img17,
-		description: "Table Lamp",
+		name: "Table Lamp",
 		price: 75,
 		otherImgs: [TableLamp1, TableLamp2],
 		specs:
@@ -285,7 +286,7 @@ const items = [
 		id: 18,
 		category: "lamp",
 		img: Img18,
-		description: "Mat Black Lamp",
+		name: "Mat Black Lamp",
 		price: 175,
 		otherImgs: [MatLamp1, MatLamp2],
 		specs:
@@ -298,7 +299,7 @@ const items = [
 		id: 19,
 		category: "chair",
 		img: Img19,
-		description: "Comfy Chair",
+		name: "Comfy Chair",
 		price: 119,
 		otherImgs: [Comfy1, Comfy2],
 		specs:
@@ -311,7 +312,7 @@ const items = [
 		id: 20,
 		category: "skin-care",
 		img: Img20,
-		description: "Body Oil 50ml",
+		name: "Body Oil 50ml",
 		price: 45,
 		otherImgs: [BodyOil1, BodyOil2],
 		specs:
@@ -322,4 +323,4 @@ const items = [
 	},
 ];
 
-export default items;
+export default Products;
